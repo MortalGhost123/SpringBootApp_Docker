@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mongoC1:
+    image: mongo:latest
+    container_name: "mongoC1"
+    ports:
+      - "27017:27017"
+  springmdb:
+    image: springmdb:1.0
+    container_name: springmdb
+    ports:
+      - "8080:8080"
+    links:
+      - mongoC1
